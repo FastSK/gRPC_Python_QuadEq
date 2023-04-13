@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message Coefficients {
+  float a = 1;
+  float b = 2;
+  float c = 3;
+}
+
+message Solution {
+  int32 num_solutions = 1;
+  repeated float solutions = 2;
+//  string sol1 = 1;
+//  string sol2 = 2;
+}
+
+service api {
+  rpc solve (Coefficients) returns (Solution);
+}
